@@ -204,6 +204,9 @@ body {
     .card {
         min-width: 100%;
     }
+    .full-container {
+        margin: 10px
+    }
     .nav-button {
         visibility: hidden;
     }
@@ -211,7 +214,9 @@ body {
         display: flex;
         flex-direction: column;
     }
-
+    .card-title {
+        padding: 10px;
+    }
     .card-description {
         padding: 10px;
         margin-right: 20px;
