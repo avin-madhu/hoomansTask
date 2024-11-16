@@ -203,7 +203,9 @@ body {
 @media (max-width: 768px) {
     .card {
         min-width: 100%;
-        margin: 5px;
+    }
+    .full-container {
+        margin: 10px
     }
     .nav-button {
         visibility: hidden;
