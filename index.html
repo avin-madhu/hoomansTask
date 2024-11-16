@@ -122,9 +122,9 @@
       let currentPosition = 0;
 
       function moveCarousel(direction) {
-        const maxPosition = -(totalCards - 3) * (cardWidth + 32);
+        const maxPosition = -(totalCards - 3) * (cardWidth + 48);
 
-        currentPosition += direction * (cardWidth + 32);
+        currentPosition += direction * (cardWidth + 48);
 
         // Loop back to start/end
         if (currentPosition > 0) {
