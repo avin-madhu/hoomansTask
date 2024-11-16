@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Page - Manage Cards</title>
+    <link href="https://fonts.cdnfonts.com/css/cabinet-grotesk" rel="stylesheet">
+    <title>Manage Cards</title>
   </head>
 
   <body>
@@ -19,6 +20,7 @@
         text-align: center;
         color: #333;
         margin-bottom: 20px;
+        font-family: 'Cabinet Grotesk', sans-serif;
       }
 
       .form-container {
@@ -40,12 +42,14 @@
         margin-bottom: 5px;
         font-weight: bold;
         color: #555;
+        font-family: 'Cabinet Grotesk', sans-serif;
       }
 
       input[type="text"],
       textarea {
-        width: 100%;
+        width: 90%;
         padding: 10px;
+        margin-right: 10px;
         margin-bottom: 15px;
         border: 1px solid #ccc;
         border-radius: 4px;
@@ -53,23 +57,22 @@
       }
 
       textarea {
-        width: 100%;
-        padding: 12px; /* Increased padding for better spacing */
+        width: 90%;
         margin-bottom: 15px;
         border: 1px solid #ccc;
-        border-radius: 8px; /* More pronounced rounded corners */
+        border-radius: 8px; 
         font-size: 14px;
-        font-family: "Arial", sans-serif; /* Consistent font family */
-        color: #333; /* Dark text color for better contrast */
-        background-color: #f9f9f9; /* Light background color */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        font-family: "Arial", sans-serif; 
+        color: #333; 
+        background-color: #f9f9f9; 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
         transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus */
       }
 
       textarea:focus {
-        border-color: #28a745; /* Green border on focus */
-        box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); /* Green shadow on focus */
-        outline: none; /* Remove default outline */
+        border-color: #28a745; 
+        box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+        outline: none; 
       }
 
       button {
@@ -90,6 +93,7 @@
       h2 {
         margin-top: 40px;
         color: #333;
+        font-family: 'Cabinet Grotesk', sans-serif;
       }
 
       .cards-container {
@@ -110,10 +114,10 @@
       }
     </style>
 
-    <h1>Admin Page - Manage Vacation Cards</h1>
+    <h1>Manage Cards</h1>
 
     <div class="form-container">
-      <h2>Create / Update Card</h2>
+      <h2>Create Card</h2>
       <input type="hidden" id="card-id" />
       <label for="card-title">Title:</label>
       <input type="text" id="card-title" placeholder="Enter card title" />

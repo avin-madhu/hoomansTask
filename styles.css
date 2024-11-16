@@ -26,10 +26,12 @@ body {
 .navbar {
     color: white;
     padding: 15px 20px; /* Padding for the navbar */
+    width: 100%;
 }
 
 .navbar-outer-container {
     margin: 0px;
+    width: 100%;
 }
 
 .navbar-container {
@@ -47,27 +49,11 @@ body {
     color: rgb(22, 22, 22); /* Logo color */
 }
 
-.navbar-menu {
-    list-style: none; /* Remove bullet points */
-    display: flex; /* Display menu items in a row */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-}
-
-.navbar-menu li {
-    margin-left: 20px; /* Space between menu items */
-}
-
-.navbar-menu a {
-    text-decoration: none; /* Remove underline from links */
-    color: white; /* Link color */
-    padding: 8px 12px; /* Padding for links */
-    border-radius: 4px; /* Rounded corners */
-    transition: background-color 0.3s ease; /* Smooth background color transition */
-}
-
-.navbar-menu a:hover {
-    background-color: #555; /* Darker background on hover */
+.navbar i {
+    color: #2c2c2c;
+    font-family: 'Cabinet Grotesk', sans-serif;
+    position: absolute;
+    right: 20px;
 }
 
 /* rest of the body css */

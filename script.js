@@ -13,6 +13,8 @@ export async function addCard() {
         image: image
     }
     await addDoc(collection_ref,card_data);
+    window.location.reload()
+    window.location.href('index.htm')
 }
 
 export async function getCards() {

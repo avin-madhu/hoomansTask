@@ -1,9 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
-import { apiKey } from "./apikey";
 
 const firebaseConfig = {
-  apiKey: process.env.API_KEY,
+  apiKey: "AIzaSyBFZxUwL3hicBo0d3vKvm6_HlTipxhNBWM",
   authDomain: "hoomans-task.firebaseapp.com",
   projectId: "hoomans-task",
   storageBucket: "hoomans-task.firebasestorage.app",
@@ -12,7 +11,6 @@ const firebaseConfig = {
   measurementId: "G-3TKL9873GV"
 };
 
-console.log(process.env.API_KEY)
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
