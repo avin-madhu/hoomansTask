@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/cabinet-grotesk" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Featured Moments</title>
+</head>
+<body>
+    <div class="navbar-outer-container">
+        <nav class="navbar">
+            <div class="navbar-container">
+                <h1 class="navbar-logo">Hoomans</h1>
+                <i>Admin Panel</i>
+            </div>
+        </nav>
+    </div>
+    <div class="full-container">
+        <!-- header contents -->
+        <div class="header-containerr">
+            <div class="header">
+                <h1>Featured Moments</h1>
+            </div>
+            <div class="subheader">
+                <p class="subheader-text">Our experiences reflect our distinct ethos and core values, highlighting the very best each of our homes offers.</p>
+                <div class="navigation">
+                    <div onclick="moveCarousel(1)" class="nav-button">
+                        <svg style="margin-left: 5px;" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12L4.64645 11.6464L4.29289 12L4.64645 12.3536L5 12ZM17 12.5C17.2761 12.5 17.5 12.2761 17.5 12C17.5 11.7239 17.2761 11.5 17 11.5V12.5ZM8.64645 7.64645L4.64645 11.6464L5.35355 12.3536L9.35355 8.35355L8.64645 7.64645ZM4.64645 12.3536L8.64645 16.3536L9.35355 15.6464L5.35355 11.6464L4.64645 12.3536ZM5 12.5H17V11.5H5V12.5Z" fill="#222222"/>
+                        </svg>  
+                    </div>
+                    <div onclick="moveCarousel(-1)" class="nav-button">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 12L18.3536 11.6464L18.7071 12L18.3536 12.3536L18 12ZM6 12.5C5.72386 12.5 5.5 12.2761 5.5 12C5.5 11.7239 5.72386 11.5 6 11.5V12.5ZM14.3536 7.64645L18.3536 11.6464L17.6464 12.3536L13.6464 8.35355L14.3536 7.64645ZM18.3536 12.3536L14.3536 16.3536L13.6464 15.6464L17.6464 11.6464L18.3536 12.3536ZM18 12.5H6V11.5H18V12.5Z" fill="#222222"/>
+                        </svg>                              
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- cards (carousel) container -->
+        <div class="container">
+            <div class="carousel-wrapper">
+                <div class="carousel" id="carousel">
+                      <!-- Cards retrived from firstore databaseee -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+
+        import {getCards} from './script.js'
+
+        const cards_carousel = document.getElementById("carousel");
+        cards_carousel.innerHTML = ""
+
+        async function loadCards() {
+            const card_data = await getCards();
+            console.log(card_data);
+            console.log("card_data");
+
+            for(let i=0; i<card_data.length;i++){
+                const card = document.createElement("div");
+                card.classList.add("card");
+                card.innerHTML = `<img src="${card_data[i].image}" alt="${card_data[i].image}" class="card-image">
+                            <div class="card-content">
+                                <h2 class="card-title">${card_data[i].title}</h2>
+                                <p class="card-description">${card_data[i].description}</p>
+                            </div>`
+                cards_carousel.appendChild(card)
+            }
+        }
+        loadCards();
+
+        const card_data = getCards();
+        console.log(card_data + "card_data")
+        const cards = card_data.map((card) => {
+            console.log(card)
+            console.log("bruh")
+        });
+
+        cards_carousel.innerHTML = ""
+
+        let currentPosition = 0;
+        const carousel = document.getElementById('carousel');
+        const cardWidth = document.querySelector('.card').offsetWidth;
+        const totalCards = document.querySelectorAll('.card').length;
+
+        console.log(totalCards)
+
+        function moveCarousel(direction) {
+            const maxPosition = -(totalCards - 3) * (cardWidth + 32);
+            
+            currentPosition += direction * (cardWidth + 32);
+            
+            // Loop back to start/end
+            if (currentPosition > 0) {
+                currentPosition = maxPosition;
+            } else if (currentPosition < maxPosition) {
+                currentPosition = 0;
+            }
+            
+            carousel.style.transform = `translateX(${currentPosition}px)`;
+        }
+    </script>
+</body>
+</html>

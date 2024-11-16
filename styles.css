@@ -1,0 +1,233 @@
+@import url('https://fonts.cdnfonts.com/css/cabinet-grotesk');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@font-face {
+    font-family: cabinetGrotesk;
+    src: url(fonts/CabinetGrotesk-Medium.woff);
+}
+@font-face {
+    font-family: raleway;
+    src: url(fonts/raleway/Raleway-Medium.woff);
+}
+
+body {
+    background-color: #f8f8f8;
+    /* padding: 2rem; */
+}
+
+/* navbar css */
+.navbar {
+    color: white;
+    padding: 15px 20px; /* Padding for the navbar */
+}
+
+.navbar-outer-container {
+    margin: 0px;
+}
+
+.navbar-container {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between logo and menu */
+    align-items: center; /* Center items vertically */
+    max-width: 1200px; /* Max width for the navbar */ /* Center the navbar */
+}
+
+.navbar-logo {
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-size: 24px; /* Logo font size */
+    font-weight: bold; /* Bold logo */
+    text-decoration: none; /* Remove underline */
+    color: rgb(22, 22, 22); /* Logo color */
+}
+
+.navbar-menu {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Display menu items in a row */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.navbar-menu li {
+    margin-left: 20px; /* Space between menu items */
+}
+
+.navbar-menu a {
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* Link color */
+    padding: 8px 12px; /* Padding for links */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.navbar-menu a:hover {
+    background-color: #555; /* Darker background on hover */
+}
+
+/* rest of the body css */
+
+.full-container {
+    margin: 20px;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 2200px;
+    margin: 0;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 39.68px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+/* the description of the top title */
+
+.subheader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.subheader-text {
+    color: #666;
+    font-size: 0.9rem;
+    max-width: 600px;
+    margin-bottom: 3rem;
+    font-family: raleway;
+}
+
+.navigation {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #525252;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+#nav-icon {
+    font-size: 40px; 
+}
+
+.nav-button:hover {
+    background: #e5e5e5;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    /* max-width: 100%; */
+    /* background-color: aqua; */
+}
+
+.carousel {
+    max-width: 100%;
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 3rem;
+}
+
+.card {
+    width: 400px;
+    height: 427px;
+    background: rgb(255, 255, 255);
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, padding-left 0.3s ease, height 0.3s ease;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding-left: 5px;
+}
+
+.card:hover .card-image {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+.card-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    filter: grayscale(50%);
+    transition: transform 0.3s ease;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 35.52px;
+    font-family: 'Cabinet Grotesk', sans-serif;
+    margin-top: 20px;    
+    margin-bottom: 0.75rem;
+    color: #333;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    font-family: raleway;
+    color: #666;
+    line-height: 20.72px;
+    margin: 0px;
+}
+
+@media (max-width: 1024px) {
+    .card {
+        min-width: 50px;
+    }
+    #nav-button {
+        visibility: hidden;
+    }
+    .carousel {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        min-width: 100%;
+    }
+    .nav-button {
+        visibility: hidden;
+    }
+    .carousel {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-description {
+        padding: 10px;
+        margin-right: 20px;
+    }
+}
