@@ -110,6 +110,8 @@ body {
 .navigation {
     display: flex;
     gap: 1rem;
+    position: absolute;
+    right: 168px;
 }
 
 .nav-button {
