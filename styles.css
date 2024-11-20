@@ -69,6 +69,10 @@ body {
     overflow: hidden;
 }
 
+.header-containerr {
+    margin-bottom: 45px;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -94,9 +98,11 @@ body {
 }
 
 .subheader-text {
-    color: #666;
+    color: #000000;
+    opacity: 50%;
     font-size: 0.9rem;
     max-width: 600px;
+    font-weight: 100;
     margin-bottom: 3rem;
     font-family: raleway;
 }
@@ -117,6 +123,16 @@ body {
     cursor: pointer;
     background-color: #ffffff;
     transition: all 0.3s ease;
+}
+
+#prevButton {
+    height: 32px;
+    width: 32px;
+}
+
+#nextButton {
+    height: 32px;
+    width: 32px;
 }
 
 #nav-icon {
@@ -180,9 +196,10 @@ body {
 }
 
 .card-description {
-    font-size: 0.9rem;
+    font-size: 16px;
     font-family: raleway;
-    color: #666;
+    color: #000000;
+    opacity: 50%;
     line-height: 20.72px;
     margin: 0px;
 }

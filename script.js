@@ -23,5 +23,6 @@ export async function getCards() {
     console.log(data)
     const filtered_data = data.docs.map((doc) => ({...doc.data(), id: doc.id}));
     console.log(filtered_data);
-    return filtered_data;
+    console.log("filtered data");
+    return filtered_data
 }
