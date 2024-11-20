@@ -13,8 +13,9 @@ export async function addCard() {
         image: image
     }
     await addDoc(collection_ref,card_data);
-    window.location.reload()
-    window.location.href('index.htm')
+    const messageElement = document.getElementsByClassName('addMessage')
+    messageElement[0].innerHTML = "Card added successfully";
+    localStorage.setItem("card_added", "true")
 }
 
 export async function getCards() {

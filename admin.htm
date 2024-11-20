@@ -119,6 +119,17 @@
         text-align: center;
         transition: transform 0.3s ease;
       }
+
+      .addMessage {
+          margin-top: 40px;
+          color: #333;
+          font-family: 'Cabinet Grotesk', sans-serif;
+          font-size: 20px;
+          font-style: oblique;
+          font-weight: bolder;
+          display: flex;
+          justify-content: center;
+      }
     </style>
 
     <h1>Manage Cards</h1>
@@ -137,6 +148,8 @@
       <input type="text" id="card-image" placeholder="Enter image URL" />
       <button id="addBtn" onclick="addCard()">add Card</button>
     </div>
+
+    <span class="addMessage"></span>
 
     <script type="module">
       import { addCard } from "./script.js";
